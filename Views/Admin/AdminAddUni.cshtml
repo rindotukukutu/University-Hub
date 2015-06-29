@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "AdminAddUni";
+    Layout = "~/Views/Shared/admin_Layout1.cshtml";
+}
+
+
+
+<div class="row col-md-7 " style="width:80%;height:auto;margin-left:20%;margin-top:-7%">
+    <h2> <span style="color:whitesmoke;margin-left:20%">Add University</span></h2>
+    <div class="container-fluid">
+        <div style="margin-left:12%;margin-right:40%">
+            <form action="/Admin/Uniadded" method="post" style="margin-top:1%">
+
+                <input type="text" class="form-control" placeholder="University Name" name="uniName" style="background-color:white;opacity:0.9"><br>
+                <input style="opacity:1" type="text" name="degree1" class="form-control" placeholder="degree" /><br>
+                <input style="opacity:1" type="text" name="degree2" class="form-control" placeholder="degree" /><br>
+                <input style="opacity:1" type="text" name="degree3" class="form-control" placeholder="degree" /><br>
+                <textarea style="opacity:1" name="degree1info" rows="5" class="form-control" placeholder="degree info"></textarea><br>
+                <textarea style="opacity:1" name="degree2info" rows="5" class="form-control" placeholder="degree info"></textarea><br>
+                <textarea style="opacity:1" name="degree3info" rows="5" class="form-control" placeholder="degree info"></textarea><br>
+                <input style="opacity:1" type="text" name="city" class="form-control" placeholder="City" /><br>
+                <input style="opacity:1;width:auto" type="submit" class="btn-primary form-control" value="submit" name="submission" />
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "comment";
+    Layout = "~/Views/Shared/admin_Layout1.cshtml";
+}
+@using University_Hub.Models;
+<h2 style="margin-left:35%;margin-top:-8%;color:black"><b>Comments of Required Id</b></h2>
+<div >
+
+    @foreach(var a in Model)
+    {
+        <p style="font-size:large;color:white;margin-left:35%;margin-top:-1%">" @a.description "</p><br>   
+    }
+
+</div>

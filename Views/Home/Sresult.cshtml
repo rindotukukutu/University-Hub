@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Sresult";
+}
+
+@using University_Hub.Models;
+@section Scripts{
+
+    <script>
+        $('#submt').click(function () {
+            $('#unName').val($('#uName').val());
+        })
+
+        </script>
+}
+
+<div style="padding-top:2%;margin-left:0%;margin-bottom:0%;margin-right:0%;background-image:url(../../Images/final.jpg);background-repeat:no-repeat;background-size:100% 100%;height:50%;">
+    <b style="font-family:monospace;margin-left:2%;font-size:x-large;color:white;">Searched Universities</b>
+    <div style="margin-top:-1.5%; margin-left:0%;width:100%;height:400px">
+       <span style="padding-top:1%;padding-left:89%;font-family:monospace;color:white">Welcome <a href="/Home/userInfo">@Session["userName"]</a>!</span>
+        <div style="margin-top:2%; margin-left:2%;height:auto">
+            <table>
+                @if (Model != null)
+                {
+                    foreach (university u in Model)
+                    {
+                        <tr>
+                            <td>
+                            <span style="color:white;font-size:xx-large;font-family:monospace">@u.uniName</span>
+                                </td>
+                    
+                        <td>
+                        <form action="/Home/puCit" method="post">
+                            <input id="uName" value="@u.city" type="hidden" />
+                            <input class="form-control" name="option" value="@u.uniName" type="hidden" />
+                            
+                            <input type="submit" value="Show Details" class="form-control" style="width:auto;background-color:gold">
+                        </form>
+                            </td>
+                        </tr>
+                    }
+                }
+                </table>
+
+
+</div>
+    </div>
+    <div style="margin-left:2%;margin-bottom:1% ;width:100%;height:auto;background-color:aliceblue;margin-top:10%;background-image:url(../../Images/final.jpg);background-repeat:no-repeat;background-size:100% 100%;height:50%;opacity:1.3">
+
+
+        @if (ViewBag.jamss != null)
+        {
+            foreach (comment ab in (List<comment>)ViewBag.jamss)
+            {
+                foreach (user u in ViewBag.ulist)
+                {
+                    if (u.Id == ab.userId)
+                    {
+
+                        <img style="max-width:4%;max-height:6%;border-radius:10px 10px 10px 10px;" src=@u.dp /> <span style="font-family:monospace"> <a href='/Home/userInfos?Id=@u.name'> @u.name </a></span> <b>:</b> <span style="font-family:monospace;color:white;font-size:larger">@ab.description </span><br><br>
+                    }
+                }
+            }
+        }
+    </div>
+
+
+
+    <div style="margin-left:2%;margin-bottom:20%;position:absolute; width:50% ">
+        <form action="/Home/Savecomments" method="post">
+            <input id="unName" class="form-control" type="hidden" name="uName" value="" />
+            <textarea name="description" rows="5" class="form-control" placeholder="comments"></textarea><br>
+            <input id="submt" type="submit" value="comment" class="btn-success form-control" style="width:auto" />
+        </form>
+    </div>
+
+</div>

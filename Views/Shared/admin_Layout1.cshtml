@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>@Page.Title</title>
+        @RenderSection("head", required: false)
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/styles.css" rel="stylesheet" />
+       
+    </head>
+    <body style="background-image:url('../../Images/myunezS.jpg');background-repeat:no-repeat;background-size:110%">
+        <header>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid" style="background-color:#175275;font-family:monospace">
+                    <div class="navbar-header">
+
+                        <a class="navbar-brand" href="/Admin/Index"><span style="font-family:monospace;color:aliceblue;font-size:larger">University</span><span style="font-family:monospace;color:whitesmoke !important;">Hub</span></a>
+
+                    </div>
+                    </div>
+                   
+                
+            </nav>
+        </header>
+        <div id='cssmenu' style="margin-top:5%" >
+            <ul>
+                <li><a href='/Admin/Index'><span>Home</span></a></li>
+                <li class='has-sub'>
+                    <a href='#'><span>University</span></a>
+                    <ul>
+                        <li class='has-sub'>
+                            <a href="/Admin/AdminAddUni"><span>Add University</span></a>
+                        </li>
+                        <li class='has-sub'>
+                            <a href="/Admin/AdminUpdateUni"><span>Update University</span></a>
+                            
+                        </li>
+                        <li class='has-sub'>
+                            <a href="/Admin/AdminRemoveUni"><span>Remove University</span></a>
+
+                        </li>
+                    </ul>
+                </li>
+                <li class='active has-sub'>
+                    <li><a href="/Admin/RemoveUser"><span>Remove User</span></a></li>
+                
+
+                <li class='last'><a href="/Admin/viewComments"><span>View Comments</span></a></li>
+                <li class='last'><a href="/Admin/delComments"><span>Del Comments</span></a></li>
+                <li class='last'><a href="/Home/Index"><span>Log Out</span></a></li>
+                   
+                    
+                </ul>
+</div>
+         @RenderBody()
+        <script src="~/Scripts/bootstrap.js" type="text/javascript"></script>
+        <script src="~/Scripts/jquery-1.8.2.js"></script>
+        <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+        <script src="~/Scripts/jquery-2.1.4.js"></script>
+    </body>
+</html>

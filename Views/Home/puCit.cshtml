@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "puCit";
+}
+@using University_Hub.Models;
+
+@{
+    DatabaseEntites db = new DatabaseEntites();
+}
+<div style="align-content:center">
+
+    
+            @{
+    //string s = ViewBag.solve;
+
+    //university us = db.universities.FirstOrDefault(a => a.uniName == s);
+    <input type="text" placeholder="Enter Your Marks out of 50" id="entry" class="form-control" style="width:auto;margin-left:42%;margin-top:1%;background-color:brown;color:white" >
+    <input type="button" id="get" value="Make Your Aggregate" class="form-control btn-warning" style="width:auto;margin-left:57%;margin-top:-2.5%" >
+    @*<span>(@ViewBag.matric @+ @ViewBag.inter) </span>*@
+    <p  style="color:gold;margin-left:17%;margin-top:1%"><b><span style="text-transform:uppercase"> @Session["userName"]</span> your aggregate is </b></p>
+    <p id="aggre" style="color:white;margin-top:-1%;margin-left:57%;font-size:xx-large">    </p>
+    
+    <p><h2 style="font-family:monospace;color:gold;font-size:xx-large;"><b>&nbsp @Model.uniName is offering following degrees</b></h2></p><br>
+    <p style="color:gold;font-family:monospace;font-size:x-large">&nbsp   &nbsp &nbsp <b> @Model.degree1</b></p><br>
+    <p style="color:white;font-family:monospace">&nbsp &nbsp &nbsp &nbsp &nbsp @Model.degree1info</p><br>
+    <p style="color:gold;font-family:monospace;font-size:x-large">&nbsp  &nbsp &nbsp <b>@Model.degree2</b></p><br>
+    <p style="color:white;font-family:monospace">&nbsp &nbsp &nbsp &nbsp &nbsp @Model.degree2info </p><br>
+                <p style="color:gold;font-family:monospace;font-size:x-large">&nbsp &nbsp &nbsp <b>@Model.degree3</b></p><br>
+                <p style="color:white;font-family:monospace"> &nbsp &nbsp &nbsp &nbsp &nbsp @Model.degree3info</p>
+        }
+    @{
+        //double temp = (double)Session["add"];
+        
+        var temp = ViewBag.merit;
+        var tempp = ViewBag.inter;
+    }
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <script>
+    $(document).ready(function () {
+        $('#get').click(function () {
+            debugger;
+            var value = $('#entry').val();
+            var x = value * 0.35 * 0.5;
+            var y = @temp + x + @tempp 
+            $('#aggre').text(y);
+        })
+    });
+
+
+    </script>
+
+
+
+
+
+    </div>

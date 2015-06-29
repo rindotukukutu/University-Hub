@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "viewComments";
+    Layout = "~/Views/Shared/admin_Layout1.cshtml";
+}
+
+<div class="center-block" style="width:auto;height:auto;margin-left:33%;margin-top:-12%;margin-right:45%;margin-bottom:30%;color:purple">
+        <h2 style="margin-left:1%;color:#0a0a0a">User Comments</h2>    
+        <form action="/Admin/comment" method="post">
+            <input type="text" name="Id" class="form-control" placeholder="Enter Id" /><br>
+            <input type="submit" value="check" class="form-control btn-danger" style="width:auto" />
+        </form>
+</div>

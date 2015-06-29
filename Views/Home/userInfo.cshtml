@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "userInfo";
+}
+@using University_Hub.Models;
+
+<div class="row col-lg-6 pull-left" style="margin-left:3%;margin-top:3%;width:auto;height:auto" >
+    <h2 style="color:firebrick"><i style="text-transform:uppercase">@Model.name Info</i></h2>
+    
+    <h1><i style="color:white">Full Name: <span style="color:firebrick"> @Model.name @Model.lname</span></i></h1>
+    <h1><i style="color:white">Email Id: <span style="color:firebrick">@Model.email</span></i></h1> 
+    <h1><i style="color:white">Gender: <span style="color:firebrick">@Model.gender</span></i></h1> 
+    <h1><i style="color:white">Contact: <span style="color:firebrick">@Model.contact</span></i></h1> 
+    <h1><i style="color:white">Matric: <span style="color:firebrick">@Model.Matric %</span></i></h1> 
+    <h1><i style="color:white">Intermediate: <span style="color:firebrick">@Model.Intermediate %</span></i></h1> 
+
+</div>
+<div class="row col-lg-2 pull-left" style="margin-left:6%;margin-top:6%;margin-right:18%;margin-bottom:30%">
+
+    
+    <img style="max-width:90%;max-height:90%" src="@Model.dp"/>
+
+
+</div>
